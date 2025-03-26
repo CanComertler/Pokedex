@@ -7,4 +7,5 @@ export default function Search() {
       <Text>Search</Text>
     </View>
   )
+  
 }
