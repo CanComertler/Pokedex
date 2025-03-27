@@ -4,11 +4,12 @@ import {
   StaticParamList,
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Trainer from './screens/Trainer';
-import Badge from './screens/Badge';
-import Search from './screens/Search';
-import Hospital from './screens/Hospital';
+
 import Ionicons from '@expo/vector-icons/Ionicons';
+import Badge from './screens/Badge';
+import Hospital from './screens/Hospital';
+import Search from './screens/Search';
+import Trainer from './screens/Trainer';
 
 const HomeTabs = createBottomTabNavigator({
   screens: {

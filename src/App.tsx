@@ -6,8 +6,8 @@ import { Navigation } from './navigation';
 
 Asset.loadAsync([
   ...NavigationAssets,
-  require('./assets/newspaper.png'),
-  require('./assets/bell.png'),
+  require('./assets/icon.png'),
+  require('./assets/icon.png'),
 ]);
 
 SplashScreen.preventAutoHideAsync();

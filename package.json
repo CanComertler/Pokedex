@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.0",
+    "@faker-js/faker": "^9.6.0",
     "@react-navigation/bottom-tabs": "^7.1.1",
     "@react-navigation/elements": "^2.2.3",
     "@react-navigation/native": "^7.0.12",
@@ -20,6 +21,8 @@
     "expo-dev-client": "~5.0.4",
     "expo-splash-screen": "~0.29.13",
     "expo-system-ui": "~4.0.4",
+    "faker": "^6.6.6",
+    "nice-color-palettes": "^4.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.76.3",
