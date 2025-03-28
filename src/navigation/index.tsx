@@ -10,6 +10,7 @@ import Badge from './screens/Badge';
 import Hospital from './screens/Hospital';
 import Search from './screens/Search';
 import Trainer from './screens/Trainer';
+import FavoritesScreen from './screens/FavoritesScreen';
 
 const HomeTabs = createBottomTabNavigator({
   screens: {
@@ -29,6 +30,15 @@ const HomeTabs = createBottomTabNavigator({
         
         tabBarIcon: ({ size }) => (
           <Ionicons name="man" size={24}  />
+        ),
+      },
+    },
+    Favorite: {
+      screen: FavoritesScreen,
+      options: {
+        headerShown: false,        
+        tabBarIcon: ({ size }) => (
+          <Ionicons name="heart" size={24}  />
         ),
       },
     },

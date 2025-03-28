@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, StyleSheet, ScrollView, ActivityIndicator, Animated, TouchableOpacity } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { toggleFavorite } from "../redux/favoritesSlice";
 
 interface PokemonCardProps {
   pokemonId: string;
@@ -30,6 +33,10 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemonId, onClose }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>("");
   const [statAnimations, setStatAnimations] = useState<Animated.Value[]>([]);
+
+  const dispatch = useDispatch();
+  const favorites = useSelector((state: RootState) => state.favorites.favorites);
+  const isFavorite = favorites.includes(pokemonId);
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -65,6 +72,12 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemonId, onClose }) => {
     }
   }, [pokemon]);
 
+  const handleFavoriteToggle = () => {
+    if (pokemon) {
+      dispatch(toggleFavorite(pokemonId));
+    }
+  };
+
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
@@ -86,9 +99,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemonId, onClose }) => {
       <Text style={styles.pokemonName}>{pokemon.name.toUpperCase()}</Text>
       <Image
         source={{
-          uri:
-            pokemon.sprites.other["official-artwork"].front_default ||
-            pokemon.sprites.front_default,
+          uri: pokemon.sprites.other["official-artwork"].front_default || pokemon.sprites.front_default,
         }}
         style={styles.pokemonImage}
       />
@@ -134,6 +145,12 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemonId, onClose }) => {
           );
         })}
       </View>
+
+      <TouchableOpacity style={styles.favoriteButton} onPress={handleFavoriteToggle}>
+        <Text style={styles.favoriteButtonText}>
+          {isFavorite ? "Favoriden Çıkart" : "Favoriye Ekle"}
+        </Text>
+      </TouchableOpacity>
 
       <TouchableOpacity style={styles.closeButton} onPress={onClose}>
         <Text style={styles.closeButtonText}>Kapat</Text>
@@ -185,7 +202,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   cardContainer: {
-    flex: 1,
+    borderRadius: 35,
     backgroundColor: "#fff",
   },
   cardContent: {
@@ -274,7 +291,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   closeButton: {
-    marginBottom: 50,  
+    marginBottom: 50,
     backgroundColor: "#007BFF",
     paddingVertical: 12,
     borderRadius: 35,
@@ -282,7 +299,20 @@ const styles = StyleSheet.create({
     marginTop: 15,
     width: "80%",
   },
-  closeButtonText: {  
+  closeButtonText: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+  favoriteButton: {
+    backgroundColor: "#FFD700",
+    paddingVertical: 12,
+    borderRadius: 35,
+    alignItems: "center",
+    marginTop: 10,
+    width: "80%",
+  },
+  favoriteButtonText: {
     color: "#fff",
     fontWeight: "bold",
     fontSize: 16,
