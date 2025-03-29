@@ -1,65 +1,199 @@
-# Starter Template with React Navigation
+# Pokedex
 
-This is a minimal starter template for React Native apps using Expo and React Navigation.
+Pokedex is a mobile application developed using React Native and Expo, designed to provide detailed information about Pokémon species. This project serves as a practical example of using various libraries and tools to enhance the functionality and user experience of a React Native application.
 
-It includes the following:
+## Features
 
-- Example [Native Stack](https://reactnavigation.org/docs/native-stack-navigator) with a nested [Bottom Tab](https://reactnavigation.org/docs/bottom-tab-navigator)
-- Web support with [React Native for Web](https://necolas.github.io/react-native-web/)
-- TypeScript support and configured for React Navigation
-- Automatic deep link and URL handling configuration
-- Expo [Development Build](https://docs.expo.dev/develop/development-builds/introduction/) with [Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)
-- Edge-to-edge configured on Android with [`react-native-edge-to-edge`](https://www.npmjs.com/package/react-native-edge-to-edge)
+- **React Navigation Integration**: Implements native stack navigation with nested bottom tabs for seamless user experience.
+- **Web Support**: Compatible with React Native for Web, allowing the application to run in web browsers.
+- **TypeScript Support**: Utilizes TypeScript for type safety and improved developer experience.
+- **Deep Linking and URL Handling**: Configured for automatic deep link and URL handling to enhance navigation capabilities.
+- **Edge-to-Edge Display**: Configured for edge-to-edge display on Android devices using `react-native-edge-to-edge`.
+- **Smooth Animations**: Uses `react-native-reanimated` to create fluid and performant animations.
+- **API Requests**: Utilizes `axios` for making HTTP requests to external APIs.
+
+## Third-Party Libraries
+
+- **react-native-reanimated**: Provides a comprehensive animation API for creating smooth animations in React Native applications.
+- **axios**: A promise-based HTTP client for making API requests.
+- **react-native-gesture-handler**: Enables gesture handling capabilities in React Native.
+- **react-native-safe-area-context**: Manages safe area boundaries in React Native applications.
+- **react-native-screens**: Optimizes memory usage and performance by managing native navigation screens.
+
+## Screenshots
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/6a8b9f64-9442-48dd-a1bd-7bec5dbf0ed7">
+    <img src="https://github.com/user-attachments/assets/6a8b9f64-9442-48dd-a1bd-7bec5dbf0ed7" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/cff847b7-5595-47e4-a31a-8e074bf62cdf">
+    <img src="https://github.com/user-attachments/assets/cff847b7-5595-47e4-a31a-8e074bf62cdf" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/3b36ac02-12cd-4a2a-8d0d-e994735a7f8a">
+    <img src="https://github.com/user-attachments/assets/3b36ac02-12cd-4a2a-8d0d-e994735a7f8a" width="300">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/f4edc5bc-d1a8-45af-ab3d-474a4928a394">
+    <img src="https://github.com/user-attachments/assets/f4edc5bc-d1a8-45af-ab3d-474a4928a394" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/ba822439-3fe2-4482-b0ba-09a1de64ec7d">
+    <img src="https://github.com/user-attachments/assets/ba822439-3fe2-4482-b0ba-09a1de64ec7d" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/d2c940a8-6778-4a89-83da-be01dc118146">
+    <img src="https://github.com/user-attachments/assets/d2c940a8-6778-4a89-83da-be01dc118146" width="300">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/c082b0f9-3752-4dea-a2c7-247de6bd9b96">
+    <img src="https://github.com/user-attachments/assets/c082b0f9-3752-4dea-a2c7-247de6bd9b96" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/07ba4288-939e-4a9e-9625-eda350fa48fd">
+    <img src="https://github.com/user-attachments/assets/07ba4288-939e-4a9e-9625-eda350fa48fd" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/256b5944-239d-43a4-a782-43b77d6fd025">
+    <img src="https://github.com/user-attachments/assets/256b5944-239d-43a4-a782-43b77d6fd025" width="300">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/57a1fb67-d0b4-4e69-9a9a-741051a9228e">
+    <img src="https://github.com/user-attachments/assets/57a1fb67-d0b4-4e69-9a9a-741051a9228e" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/46dc8c6e-a7fd-4892-a97a-571ee8f91ca6">
+    <img src="https://github.com/user-attachments/assets/46dc8c6e-a7fd-4892-a97a-571ee8f91ca6" width="300">
+  </a>
+</p>
+
+
+
+
 
 ## Getting Started
 
-1. Create a new project using this template:
+Follow these steps to set up and run the project locally:
 
-   ```sh
-   npx create-expo-app@latest --template react-navigation/template
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/CanComertler/Pokedex.git
+   cd Pokedex
    ```
 
-2. Edit the `app.json` file to configure the `name`, `slug`, `scheme` and bundle identifiers (`ios.bundleIdentifier` and `android.bundleIdentifier`) for your app.
+2. **Install Dependencies**:
 
-3. Edit the `src/App.tsx` file to start working on your app.
+   ```bash
+   npm install
+   ```
 
-## Running the app
+3. **Start the Development Server**:
 
-- Install the dependencies:
+   ```bash
+   npm start
+   ```
 
-  ```sh
-  npm install
-  ```
+4. **Run on Emulator or Device**:
 
-- Start the development server:
+   - For iOS:
 
-  ```sh
-  npm start
-  ```
+     ```bash
+     npm run ios
+     ```
 
-- Build and run iOS and Android development builds:
+   - For Android:
 
-  ```sh
-  npm run ios
-  # or
-  npm run android
-  ```
+     ```bash
+     npm run android
+     ```
 
-- In the terminal running the development server, press `i` to open the iOS simulator, `a` to open the Android device or emulator, or `w` to open the web browser.
+   - For Web:
+
+     ```bash
+     npm run web
+     ```
 
 ## Notes
 
-This project uses a [development build](https://docs.expo.dev/develop/development-builds/introduction/) and cannot be run with [Expo Go](https://expo.dev/go). To run the app with Expo Go, edit the `package.json` file, remove the `expo-dev-client` package and `--dev-client` flag from the `start` script. However, Edge-to-edge won't work on Expo Go.
-
-We highly recommend using the development builds for normal development and testing.
-
-The `ios` and `android` folder are gitignored in the project by default as they are automatically generated during the build process ([Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)). This means that you should not edit these folders directly and use [config plugins](https://docs.expo.dev/config-plugins/) instead. However, if you need to edit these folders, you can remove them from the `.gitignore` file so that they are tracked by git.
+- This project uses a development build and cannot be run with Expo Go. To run the app with Expo Go, edit the `package.json` file, remove the `expo-dev-client` package and the `--dev-client` flag from the start script. However, note that edge-to-edge display won't work on Expo Go.
+- The `ios` and `android` folders are gitignored by default as they are automatically generated during the build process (Continuous Native Generation). If you need to edit these folders, you can remove them from the `.gitignore` file so that they are tracked by git.
 
 ## Resources
 
-- [React Navigation documentation](https://reactnavigation.org/)
-- [Expo documentation](https://docs.expo.dev/)
+- [React Navigation Documentation](https://reactnavigation.org/docs/getting-started)
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Reanimated Documentation](https://docs.swmansion.com/react-native-reanimated/)
+- [Axios Documentation](https://axios-http.com/docs/intro)
 
 ---
 
-Demo assets are from [lucide.dev](https://lucide.dev/)
+# Pokédex
+
+Pokédex, React Native ve Expo kullanılarak geliştirilmiş, Pokémon türleri hakkında detaylı bilgiler sunan bir mobil uygulamadır. Bu proje, React Native uygulamalarında çeşitli kütüphane ve araçları kullanarak işlevselliği ve kullanıcı deneyimini geliştirmeye yönelik pratik bir örnek sunmaktadır.
+
+## Özellikler
+
+- **React Navigation Entegrasyonu**: Kullanıcı deneyimini geliştirmek için yerel yığın navigasyonu ve iç içe geçmiş alt sekmeler uygular.
+- **Web Desteği**: React Native for Web ile uyumlu olup, uygulamanın web tarayıcılarında çalışmasına olanak tanır.
+- **TypeScript Desteği**: Tür güvenliği ve geliştirilmiş geliştirici deneyimi için TypeScript kullanır.
+- **Derin Bağlantı ve URL İşleme**: Navigasyon yeteneklerini artırmak için otomatik derin bağlantı ve URL işleme yapılandırmasına sahiptir.
+- **Kenardan Kenara Görüntüleme**: Android cihazlarda `react-native-edge-to-edge` kullanarak kenardan kenara görüntüleme için yapılandırılmıştır.
+- **Akıcı Animasyonlar**: `react-native-reanimated` kullanarak akıcı ve performanslı animasyonlar oluşturur.
+- **API İstekleri**: Harici API'lere HTTP istekleri yapmak için `axios` kullanır.
+
+## Ücüncü Parti Kütüphaneler
+
+- **react-native-reanimated**: React Native uygulamalarında akıcı animasyonlar oluşturmak için kapsamlı bir animasyon API'si sağlar.
+- **axios**: API istekleri yapmak için kullanılan bir promise tabanlı HTTP istemcisidir.
+- **react-native-gesture-handler**: React Native'de jest işleme yeteneklerini etkinleştirir.
+- **react-native-safe-area-context**: React Native uygulamalarında güvenli alan sınırlarını yönetir.
+- **react-native-screens**: Yerel navigasyon ekranlarını yöneterek bellek kullanımı ve performansı optimize eder.
+
+## Uygulama Görselleri
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/6a8b9f64-9442-48dd-a1bd-7bec5dbf0ed7">
+    <img src="https://github.com/user-attachments/assets/6a8b9f64-9442-48dd-a1bd-7bec5dbf0ed7" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/cff847b7-5595-47e4-a31a-8e074bf62cdf">
+    <img src="https://github.com/user-attachments/assets/cff847b7-5595-47e4-a31a-8e074bf62cdf" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/3b36ac02-12cd-4a2a-8d0d-e994735a7f8a">
+    <img src="https://github.com/user-attachments/assets/3b36ac02-12cd-4a2a-8d0d-e994735a7f8a" width="300">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/f4edc5bc-d1a8-45af-ab3d-474a4928a394">
+    <img src="https://github.com/user-attachments/assets/f4edc5bc-d1a8-45af-ab3d-474a4928a394" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/ba822439-3fe2-4482-b0ba-09a1de64ec7d">
+    <img src="https://github.com/user-attachments/assets/ba822439-3fe2-4482-b0ba-09a1de64ec7d" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/d2c940a8-6778-4a89-83da-be01dc118146">
+    <img src="https://github.com/user-attachments/assets/d2c940a8-6778-4a89-83da-be01dc118146" width="300">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/c082b0f9-3752-4dea-a2c7-247de6bd9b96">
+    <img src="https://github.com/user-attachments/assets/c082b0f9-3752-4dea-a2c7-247de6bd9b96" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/07ba4288-939e-4a9e-9625-eda350fa48fd">
+    <img src="https://github.com/user-attachments/assets/07ba4288-939e-4a9e-9625-eda350fa48fd" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/256b5944-239d-43a4-a782-43b77d6fd025">
+    <img src="https://github.com/user-attachments/assets/256b5944-239d-43a4-a782-43b77d6fd025" width="300">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/57a1fb67-d0b4-4e69-9a9a-741051a9228e">
+    <img src="https://github.com/user-attachments/assets/57a1fb67-d0b4-4e69-9a9a-741051a9228e" width="300">
+  </a>
+  <a href="https://github.com/user-attachments/assets/46dc8c6e-a7fd-4892-a97a-571ee8f91ca6">
+    <img src="https://github.com/user-attachments/assets/46dc8c6e-a7fd-4892-a97a-571ee8f91ca6" width="300">
+  </a>
+</p>
+
