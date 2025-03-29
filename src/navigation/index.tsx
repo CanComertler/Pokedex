@@ -5,13 +5,12 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Ionicons from "@expo/vector-icons/Ionicons";
 import Badge from "./screens/Badge";
 import Hospital from "./screens/Hospital";
 import Search from "./screens/Search";
-import Trainer from "./screens/Trainer";
 import FavoritesScreen from "./screens/FavoritesScreen";
 import { Image } from "react-native";
+import Ash from "./screens/Ash";
 
 const HomeTabs = createBottomTabNavigator({
   screens: {
@@ -24,8 +23,8 @@ const HomeTabs = createBottomTabNavigator({
         style={{ width: size * 1.5, height: size * 1.5, marginBottom: 15}}/>,
       },
     },
-    Trainer: {
-      screen: Trainer,
+    Ash: {
+      screen: Ash,
       options: {
         headerShown: false,
         tabBarIcon: ({ size }) => <Image

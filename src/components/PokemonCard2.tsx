@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, StyleSheet, ScrollView, ActivityIndicator, Animated, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { toggleFavorite } from "../redux/favoritesSlice";
 
 interface PokemonCardProps {
   pokemonId: string;
@@ -35,8 +33,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemonId, onClose }) => {
   const [statAnimations, setStatAnimations] = useState<Animated.Value[]>([]);
 
   const dispatch = useDispatch();
-  const favorites = useSelector((state: RootState) => state.favorites.favorites);
-  const isFavorite = favorites.includes(pokemonId);
+
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -72,11 +69,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemonId, onClose }) => {
     }
   }, [pokemon]);
 
-  const handleFavoriteToggle = () => {
-    if (pokemon) {
-      dispatch(toggleFavorite(pokemonId));
-    }
-  };
+
 
   if (loading) {
     return (
@@ -145,12 +138,6 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemonId, onClose }) => {
           );
         })}
       </View>
-
-      <TouchableOpacity style={styles.favoriteButton} onPress={handleFavoriteToggle}>
-        <Text style={styles.favoriteButtonText}>
-          {isFavorite ? "Favoriden Çıkart" : "Favoriye Ekle"}
-        </Text>
-      </TouchableOpacity>
 
       <TouchableOpacity style={styles.closeButton} onPress={onClose}>
         <Text style={styles.closeButtonText}>Kapat</Text>
@@ -301,19 +288,6 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   closeButtonText: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 16,
-  },
-  favoriteButton: {
-    backgroundColor: "#FFD700",
-    paddingVertical: 12,
-    borderRadius: 35,
-    alignItems: "center",
-    marginTop: 10,
-    width: "80%",
-  },
-  favoriteButtonText: {
     color: "#fff",
     fontWeight: "bold",
     fontSize: 16,
